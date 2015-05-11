@@ -1,0 +1,33 @@
+body {
+	font-family: sans-serif;
+	color: #33cccc;
+	background-color: #000000;
+}
+
+#wrapper {
+	width: 620px;
+	margin: 0 auto;
+	border: 1px dashed yellow;
+	text-align: center;
+	padding-top: 5px;
+	/*#wrapper box-shadow: 0 2px 16px  15px yellow;*/
+}
+
+.box {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #0000ff;
+	margin-bottom: 5px;
+	box-shadow: 2px 2px 6px #5c5c5c inset;
+}
+
+.box:hover {
+	box-shadow: 1px 4px 10px 14px #39ff14;
+} 
+
+#board, #name, #name-one, #name-two {
+	display: none;
+}
+
+/*neon yellow	box-shadow: 1px 4px 10px 14px #ffff00;	*/
