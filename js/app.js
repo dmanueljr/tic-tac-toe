@@ -13,15 +13,16 @@ function getBothNames() {
 	document.getElementById('mode').style.display = "none";
 	document.getElementById('name-one').style.display = "block";
 	document.getElementById('submit-name-one').addEventListener("click", function() {
-		var nameOne = document.getElementById('player-one').value;
+		var nameOne = document.getElementById('player-one').value || "player one";
 		document.getElementById('p-one').innerHTML = nameOne;
 		document.getElementById('name-one').style.display = "none";
 		document.getElementById('name-two').style.display = "block";
 		document.getElementById('submit-name-two').addEventListener("click", function() {
-			var nameTwo = document.getElementById('player-two').value;
+			var nameTwo = document.getElementById('player-two').value || "player two";
 			document.getElementById('p-comp').innerHTML = nameTwo;
 			document.getElementById('name-two').style.display = "none";
-			document.getElementById('board').style.display = "block";			
+			document.getElementById('board').style.display = "block";
+			gameOn();	
 		}); 
 	});
 }
@@ -47,17 +48,17 @@ function gameOn() {
 	boxes = document.getElementsByClassName('box');
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].addEventListener("click", function() {
-			alert(this.id);
 			if (this.style.backgroundImage == "") {
 				this.style.backgroundImage = getImage(image);
 			};
+		trackBox(this.id);
 		});
 	}
 }
 
-function getImage(x) {
+function getImage(img) {
 	var background;
-	switch (x) {
+	switch (img) {
 		case pacman:
 			background = pacman;
 			image = ghost;
@@ -68,6 +69,15 @@ function getImage(x) {
 		break;
 	}
 	return background;
+}
+
+function trackBox(bx) {
+	var topRow = []
+	switch (bx) {
+		case "n":
+			topRow.push("nw");
+			alert(topRow);
+	}
 }
 
 window.addEventListener("load", getPlayerMode);

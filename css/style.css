@@ -1,6 +1,6 @@
 body {
-	font-family: sans-serif;
-	color: #33cccc;
+	font-family: 'Comfortaa', cursive;
+	color: #3d3d3d;
 	background-color: #000000;
 }
 
@@ -30,4 +30,19 @@ body {
 	display: none;
 }
 
+input[type=text] {
+	padding: 14px;
+	text-align: center;
+	width: 50%;
+	font-size: 18px;
+	border: 3px dotted #ffff00;
+	background-color: #000000;
+	color: #ffff00;
+}
+
 /*neon yellow	box-shadow: 1px 4px 10px 14px #ffff00;	*/
+/*font-family: 'Paytone One', sans-serif; => BIG INTRO
+font-family: 'Josefin Sans', sans-serif; => slim backup
+font-family: 'Nunito', sans-serif; => h1
+font-family: 'Comfortaa', cursive; => body
+*/
