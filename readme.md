@@ -1,0 +1,1 @@
+# I'm currently working on my tic-tac-toe project using pure javascript at the moment. I am planning on incorporating angular.js functionalities to make user experience more interactive. 
