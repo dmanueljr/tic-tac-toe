@@ -48,11 +48,58 @@ function gameOn() {
 	boxes = document.getElementsByClassName('box');
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].addEventListener("click", function() {
+			trackBox(this.id);
 			if (this.style.backgroundImage == "") {
 				this.style.backgroundImage = getImage(image);
 			};
-		trackBox(this.id);
 		});
+	}
+}
+
+function trackBox(bx) {
+	switch (bx) {
+		case "nw":
+			thirdRow.push(bx);
+			firstCol.push(bx);
+			firstDia.push(bx);
+		break;
+		case "n":
+			thirdRow.push(bx);
+			secondCol.push(bx);
+		break;
+		case "ne":
+			thirdRow.push(bx);
+			thirdCol.push(bx);
+			secondDia.push(bx);
+		break;
+		case "w":
+			secondRow.push(bx);
+			firstCol.push(bx);
+		break;
+		case "c":
+			secondRow.push(bx);
+			secondCol.push(bx);
+			firstDia.push(bx);
+			secondDia.push(bx);
+		break;
+		case "e":
+			secondRow.push(bx);
+			thirdCol.push(bx);
+		break;
+		case "sw":
+			firstRow.push(bx);
+			firstCol.push(bx);
+			secondDia.push(bx);
+		break;
+		case "s":
+			firstRow.push(bx);
+			secondCol.push(bx);
+		break;
+		case "se":
+			firstRow.push(bx);
+			thirdCol.push(bx);
+			firstDia.push(bx);
+		break;
 	}
 }
 
@@ -71,20 +118,22 @@ function getImage(img) {
 	return background;
 }
 
-function trackBox(bx) {
-	var topRow = []
-	switch (bx) {
-		case "n":
-			topRow.push("nw");
-			alert(topRow);
-	}
-}
+
+
 
 window.addEventListener("load", getPlayerMode);
 
 pacman = "url('images/box-pacman.png')";
 ghost = "url('images/box-ghost-active.png')";
 image = pacman;
+firstRow = [];
+secondRow = [];
+thirdRow = [];
+firstCol = [];
+secondCol = [];
+thirdCol = [];
+firstDia = [];
+secondDia = [];
 
 
 
