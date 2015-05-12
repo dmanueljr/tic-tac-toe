@@ -48,10 +48,10 @@ function gameOn() {
 	boxes = document.getElementsByClassName('box');
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].addEventListener("click", function() {
-			trackBox(this.id);
 			if (this.style.backgroundImage == "") {
 				this.style.backgroundImage = getImage(image);
 			};
+			trackBox(this.id);
 		});
 	}
 }
@@ -59,47 +59,73 @@ function gameOn() {
 function trackBox(bx) {
 	switch (bx) {
 		case "nw":
-			thirdRow.push(bx);
-			firstCol.push(bx);
-			firstDia.push(bx);
+			if (thirdRow.indexOf("nw") < 0) {
+				thirdRow.push(bx);
+				firstCol.push(bx);
+				firstDia.push(bx);				
+			}
 		break;
 		case "n":
-			thirdRow.push(bx);
-			secondCol.push(bx);
+			if (thirdRow.indexOf("n") < 0) {
+				thirdRow.push(bx);
+				secondCol.push(bx);
+			}
 		break;
 		case "ne":
-			thirdRow.push(bx);
-			thirdCol.push(bx);
-			secondDia.push(bx);
+			if (thirdRow.indexOf("ne") < 0) {
+				thirdRow.push(bx);
+				thirdCol.push(bx);
+				secondDia.push(bx);				
+			}
 		break;
 		case "w":
-			secondRow.push(bx);
-			firstCol.push(bx);
+			if (secondRow.indexOf("w") < 0) {
+				secondRow.push(bx);
+				firstCol.push(bx);
+			}
 		break;
 		case "c":
-			secondRow.push(bx);
-			secondCol.push(bx);
-			firstDia.push(bx);
-			secondDia.push(bx);
+			if (secondRow.indexOf("c") < 0) {
+				secondRow.push(bx);
+				secondCol.push(bx);
+				firstDia.push(bx);
+				secondDia.push(bx);
+			}
 		break;
 		case "e":
-			secondRow.push(bx);
-			thirdCol.push(bx);
+			if (secondRow.indexOf("e") < 0) {
+				secondRow.push(bx);
+				thirdCol.push(bx);
+			}
 		break;
 		case "sw":
-			firstRow.push(bx);
-			firstCol.push(bx);
-			secondDia.push(bx);
+			if (firstRow.indexOf("sw") < 0) {
+				firstRow.push(bx);
+				firstCol.push(bx);
+				secondDia.push(bx);
+			}
 		break;
 		case "s":
-			firstRow.push(bx);
-			secondCol.push(bx);
+			if (firstRow.indexOf("s") < 0) {
+				firstRow.push(bx);
+				secondCol.push(bx);
+			}
 		break;
 		case "se":
-			firstRow.push(bx);
-			thirdCol.push(bx);
-			firstDia.push(bx);
+			if (firstRow.indexOf("se") < 0) {
+				firstRow.push(bx);
+				thirdCol.push(bx);
+				firstDia.push(bx);
+			}
 		break;
+	}
+	getWinner();
+}
+
+
+function getWinner() {
+	if (firstRow.length == 3) {
+		console.log("three!!");
 	}
 }
 
