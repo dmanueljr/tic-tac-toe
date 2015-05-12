@@ -51,6 +51,8 @@ function gameOn() {
 			if (this.style.backgroundImage == "") {
 				this.style.backgroundImage = getImage(image);
 			};
+			// if (this.style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {				
+			// }
 			trackBox(this.id);
 		});
 	}
@@ -59,64 +61,133 @@ function gameOn() {
 function trackBox(bx) {
 	switch (bx) {
 		case "nw":
-			if (thirdRow.indexOf("nw") < 0) {
-				thirdRow.push(bx);
-				firstCol.push(bx);
-				firstDia.push(bx);				
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneThirdRow.indexOf("nw") < 0) {
+					pOneThirdRow.push(bx);
+					pOneFirstCol.push(bx);
+					pOneFirstDia.push(bx);	
+				}
+			} 	else {
+					if (pTwoThirdRow.indexOf("nw") < 0) {
+						pTwoThirdRow.push(bx);
+						pTwoFirstCol.push(bx);
+						pTwoFirstDia.push(bx);	
+					}
+				}
 		break;
 		case "n":
-			if (thirdRow.indexOf("n") < 0) {
-				thirdRow.push(bx);
-				secondCol.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneThirdRow.indexOf("n") < 0) {
+					pOneThirdRow.push(bx);
+					pOneSecondCol.push(bx);
+				}
+			} 	else {
+					if (pTwoThirdRow.indexOf("n") < 0) {
+						pTwoThirdRow.push(bx);
+						pTwoSecondCol.push(bx);
+					}
+				}
 		break;
 		case "ne":
-			if (thirdRow.indexOf("ne") < 0) {
-				thirdRow.push(bx);
-				thirdCol.push(bx);
-				secondDia.push(bx);				
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneThirdRow.indexOf("ne") < 0) {
+					pOneThirdRow.push(bx);
+					pOneThirdCol.push(bx);
+					pOneSecondDia.push(bx);
+				} 
+			}	else {
+					if (pTwoThirdRow.indexOf("ne") < 0) {
+						pTwoThirdRow.push(bx);
+						pTwoThirdCol.push(bx);
+						pTwoSecondDia.push(bx);
+					}				
+				}
 		break;
 		case "w":
-			if (secondRow.indexOf("w") < 0) {
-				secondRow.push(bx);
-				firstCol.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneSecondRow.indexOf("w") < 0) {
+					pOneSecondRow.push(bx);
+					pOneFirstCol.push(bx);
+				} 
+			}	else {
+					if (pTwoSecondRow.indexOf("w") < 0) {				
+						pTwoSecondRow.push(bx);
+						pTwoFirstCol.push(bx);
+					}
+				}
 		break;
 		case "c":
-			if (secondRow.indexOf("c") < 0) {
-				secondRow.push(bx);
-				secondCol.push(bx);
-				firstDia.push(bx);
-				secondDia.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneSecondRow.indexOf("c") < 0) {
+					pOneSecondRow.push(bx);
+					pOneSecondCol.push(bx);
+					pOneFirstDia.push(bx);
+					pOneSecondDia.push(bx);
+				}
+			} 	else {
+					if (pTwoSecondRow.indexOf("c") < 0) {
+						pTwoSecondRow.push(bx);
+						pTwoSecondCol.push(bx);
+						pTwoFirstDia.push(bx);
+						pTwoSecondDia.push(bx);					
+					}
+				}
 		break;
 		case "e":
-			if (secondRow.indexOf("e") < 0) {
-				secondRow.push(bx);
-				thirdCol.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneSecondRow.indexOf("e") < 0) {
+					pOneSecondRow.push(bx);
+					pOneThirdCol.push(bx);
+				}
+			} 	else {
+					if (pTwoSecondRow.indexOf("e") < 0) {
+						pTwoSecondRow.push(bx);
+						pTwoThirdCol.push(bx);					
+					}
+				}
 		break;
 		case "sw":
-			if (firstRow.indexOf("sw") < 0) {
-				firstRow.push(bx);
-				firstCol.push(bx);
-				secondDia.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneFirstRow.indexOf("sw") < 0) {
+					pOneFirstRow.push(bx);
+					pOneFirstCol.push(bx);
+					pOneSecondDia.push(bx);
+				}
+			} 	else {
+					if (pTwoFirstRow.indexOf("sw") < 0) {
+						pTwoFirstRow.push(bx);
+						pTwoFirstCol.push(bx);
+						pTwoSecondDia.push(bx);
+					}
+				}
 		break;
 		case "s":
-			if (firstRow.indexOf("s") < 0) {
-				firstRow.push(bx);
-				secondCol.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneFirstRow.indexOf("s") < 0) {
+					pOneFirstRow.push(bx);
+					pOneSecondCol.push(bx);
+				}
+			}	else {
+					if (pTwoFirstRow.indexOf("s") < 0) {
+						pTwoFirstRow.push(bx);
+						pTwoSecondCol.push(bx);
+					}
+				}
 		break;
 		case "se":
-			if (firstRow.indexOf("se") < 0) {
-				firstRow.push(bx);
-				thirdCol.push(bx);
-				firstDia.push(bx);
-			}
+			if (document.getElementById(bx).style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {
+				if (pOneFirstRow.indexOf("se") < 0) {
+					pOneFirstRow.push(bx);
+					pOneThirdCol.push(bx);
+					pOneFirstDia.push(bx);
+				}
+			} 	else {
+					if (pTwoFirstRow.indexOf("se") < 0) {
+						pTwoFirstRow.push(bx);
+						pTwoThirdCol.push(bx);
+						pTwoFirstDia.push(bx);
+					}
+				}
 		break;
 	}
 	getWinner();
@@ -124,8 +195,12 @@ function trackBox(bx) {
 
 
 function getWinner() {
-	if (firstRow.length == 3) {
-		console.log("three!!");
+	if (pOneFirstRow.length == 3 || pOneSecondRow.length == 3 || pOneThirdRow.length == 3 || pOneFirstCol.length == 3 || pOneSecondCol.length == 3 || pOneThirdCol.length == 3 || pOneFirstDia.length == 3 || pOneSecondDia.length == 3) {
+		console.log("player one wins");
+	} else if (pTwoFirstRow.length == 3 || pTwoSecondRow.length == 3 || pTwoThirdRow.length == 3 || pTwoFirstCol.length == 3 || pTwoSecondCol.length == 3 || pTwoThirdCol.length == 3 || pTwoFirstDia.length == 3 || pTwoSecondDia.length == 3) {
+		console.log("player two wins");
+	} else {
+		console.log("it's a tie!")
 	}
 }
 
@@ -152,14 +227,22 @@ window.addEventListener("load", getPlayerMode);
 pacman = "url('images/box-pacman.png')";
 ghost = "url('images/box-ghost-active.png')";
 image = pacman;
-firstRow = [];
-secondRow = [];
-thirdRow = [];
-firstCol = [];
-secondCol = [];
-thirdCol = [];
-firstDia = [];
-secondDia = [];
+pOneFirstRow = [];
+pOneSecondRow = [];
+pOneThirdRow = [];
+pOneFirstCol = [];
+pOneSecondCol = [];
+pOneThirdCol = [];
+pOneFirstDia = [];
+pOneSecondDia = [];
+pTwoFirstRow = [];
+pTwoSecondRow = [];
+pTwoThirdRow = [];
+pTwoFirstCol = [];
+pTwoSecondCol = [];
+pTwoThirdCol = [];
+pTwoFirstDia = [];
+pTwoSecondDia = [];
 
 
 
