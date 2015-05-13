@@ -22,6 +22,7 @@ function getBothNames() {
 			document.getElementById('p-comp').innerHTML = nameTwo;
 			document.getElementById('name-two').style.display = "none";
 			document.getElementById('board').style.display = "block";
+			document.getElementById('wrapper').style.display = "block";
 			gameOn();	
 		}); 
 	});
@@ -32,8 +33,9 @@ function submitName() {
     document.getElementById('p-one').innerHTML = pN;
     document.getElementById('name').style.display = "none";
     document.getElementById('p-comp').innerHTML = getCompName();
-    document.getElementById('message').innerHTML = "Ready? First to 3 wins the game. Choose your move wisely!";
+    // document.getElementById('message').innerHTML = "Ready? First to 3 wins the game. Choose your move wisely!";
     document.getElementById('board').style.display = "block";
+	document.getElementById('wrapper').style.display = "block";
     gameOn();
 }
 
@@ -53,6 +55,7 @@ function gameOn() {
 			};
 			// if (this.style.backgroundImage == "url(file:///Users/dmj/Workspace/tic-tac-toe/images/box-pacman.png)") {				
 			// }
+			fullBox.push(this.id);
 			trackBox(this.id);
 		});
 	}
@@ -195,12 +198,16 @@ function trackBox(bx) {
 
 
 function getWinner() {
-	if (pOneFirstRow.length == 3 || pOneSecondRow.length == 3 || pOneThirdRow.length == 3 || pOneFirstCol.length == 3 || pOneSecondCol.length == 3 || pOneThirdCol.length == 3 || pOneFirstDia.length == 3 || pOneSecondDia.length == 3) {
-		console.log("player one wins");
-	} else if (pTwoFirstRow.length == 3 || pTwoSecondRow.length == 3 || pTwoThirdRow.length == 3 || pTwoFirstCol.length == 3 || pTwoSecondCol.length == 3 || pTwoThirdCol.length == 3 || pTwoFirstDia.length == 3 || pTwoSecondDia.length == 3) {
-		console.log("player two wins");
-	} else {
-		console.log("it's a tie!")
+	if ((pOneFirstRow.length == 3) || (pOneSecondRow.length == 3) || (pOneThirdRow.length == 3) || (pOneFirstCol.length == 3) || (pOneSecondCol.length == 3) || (pOneThirdCol.length == 3) || (pOneFirstDia.length == 3) || (pOneSecondDia.length == 3)) {
+		document.getElementById('message').innerHTML = "player one wins";
+	} else if ((pTwoFirstRow.length == 3) || (pTwoSecondRow.length == 3) || (pTwoThirdRow.length == 3) || (pTwoFirstCol.length == 3) || (pTwoSecondCol.length == 3) || (pTwoThirdCol.length == 3) || (pTwoFirstDia.length == 3) || (pTwoSecondDia.length == 3)) {
+		if (document.getElementById('p-comp').innerHTML == document.getElementById('player-two').value || document.getElementById('p-comp').innerHTML == "player two") {
+			document.getElementById('message').innerHTML = "player two wins";			
+		} else {
+			document.getElementById('message').innerHTML = "computer wins";
+		}
+	} else if (fullBox.length == 9) {
+		document.getElementById('message').innerHTML = "it's a tie!";
 	}
 }
 
@@ -243,6 +250,7 @@ pTwoSecondCol = [];
 pTwoThirdCol = [];
 pTwoFirstDia = [];
 pTwoSecondDia = [];
+fullBox = [];
 
 
 
