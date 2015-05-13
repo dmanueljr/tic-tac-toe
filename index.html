@@ -7,45 +7,45 @@
 <body>
 	<header id="board">
 		<h1 id="p-one">player1 here</h1>
-		<h1 id="p-one-score">score</h1>
-		<h1 id="p-comp">player2 here</h1>
-		<h1 id="p-comp-score">score</h1>
 		<h1 id="message">message here</h1>
+		<h1 id="p-comp">player2 here</h1>
+		<h1 id="p-one-score">pscore</h1>
+		<h1 id="p-comp-score">cscore</h1>
 	</header>
-	<div id="wrapper">
-		<div id="row3">
-			<div class="box" id="nw">a</div>
-			<div class="box" id="n">a</div>
-			<div class="box" id="ne">a</div>
-		</div>
-		<div id="row2">
-			<div class="box" id="w">a</div>
-			<div class="box" id="c">a</div>
-			<div class="box" id="e">a</div>
-		</div>
-		<div id="row1">
-			<div class="box" id="sw">a</div>
-			<div class="box" id="s">a</div>
-			<div class="box" id="se">a</div>
-		</div>
-	</div>
-	<footer>
+	<div class="intro">
 		<div id="mode">
+			<h1>TicTacToe</h1>
 			<button id="one-player">One Player</button>
 			<button id="two-player">Two Player</button>
 		</div>
 		<div id="name">
 			<input type="text" id="player" autofocus placeholder="Enter player name">
-			<input type="button" id="submit-name">
+			<button type="button" id="submit-name">play</button>
 		</div>
 		<div id="name-one">
 			<input type="text" id="player-one" autofocus placeholder="Name player 1">
-			<input type="button" id="submit-name-one">
+			<button id="submit-name-one">play</button>
 		</div>
 		<div id="name-two">
 			<input type="text" id="player-two" autofocus placeholder="Name player 2">
-			<input type="button" id="submit-name-two">
+			<button id="submit-name-two">play</button>
 		</div>
-	</footer>
-
+	</div>
+	<div id="wrapper">
+		<div id="row3">
+			<div class="box" id="nw"></div>
+			<div class="box" id="n"></div>
+			<div class="box" id="ne"></div>
+		</div>
+		<div id="row2">
+			<div class="box" id="w"></div>
+			<div class="box" id="c"></div>
+			<div class="box" id="e"></div>
+		</div>
+		<div id="row1">
+			<div class="box" id="sw"></div>
+			<div class="box" id="s"></div>
+			<div class="box" id="se"></div>
+		</div>
+	</div>
 </body></html>
